@@ -13,8 +13,7 @@ public class HandlingDropdowns extends Base{
 	//	drop.handlingDropdowns();
 	//	drop.handlingCheckBox();
 		drop.handlingRadioButton();
-		
-		
+				
 
 	}
 
@@ -27,15 +26,13 @@ public class HandlingDropdowns extends Base{
 		Select select = new Select(dropDwn);  // This is the object created for the select Class
 		
 		//Select by ID	
-		//select.selectByIndex(2);
-		
+		select.selectByIndex(2);
 		
 		//Select by Index
-		//select.selectByValue("sql");
+		select.selectByValue("sql");
 		
 		//Select by Visible Text
-		select.selectByVisibleText("C#");
-		
+		select.selectByVisibleText("C#");		
 		
 	}
 	
@@ -49,7 +46,7 @@ public class HandlingDropdowns extends Base{
 		chckBox3.click();
 		WebElement chckBox1 = driver.findElement(By.xpath("//input[@value='option-1']")); 
 		chckBox1.click();		
-		System.out.println(chckBox1.isSelected());
+		System.out.println(chckBox1.isSelected()); //---before click will be false
 		
 	}
 	
