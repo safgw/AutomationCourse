@@ -23,6 +23,7 @@ public class HandlingDropdowns extends Base{
 		driver.navigate().to("https://www.webdriveruniversity.com/Dropdown-Checkboxes-RadioButtons/index.html");
 		WebElement dropDwn = driver.findElement(By.id("dropdowm-menu-1")); 
 		
+		//creating object for Select class
 		Select select = new Select(dropDwn);  // This is the object created for the select Class
 		
 		//Select by ID	
