@@ -21,20 +21,28 @@ public class JavaScriptExecutorSample extends Base{
 		driver.navigate().to("https://selenium.qabible.in/simple-form-demo.php");
 		WebElement showMessageButton=driver.findElement(By.xpath("//button[@id='button-one']"));
 		
-		//Normally we click here. If click doesnt work, we can use the click function provided by java Script Interface
+		//Normally we click the button using the selenium Click() function. If click doesnt work, we can use the click function provided by java Script Interface
+		
 		// click() by JavaScript
 		JavascriptExecutor js = (JavascriptExecutor)driver;  // creating reference for the Interface
 		js.executeScript("arguments[0].click();", showMessageButton); // 'executeScript' is a method in this Interface. These 2 lines are predefined
 		
 		
-		// To Scroll the Page - Scroll By by JavaScript
+		// To Scroll the Page - ScrollBy() by JavaScript
+					// Scroll Down
 		js.executeScript("window.scrollBy(0,350)", "");  // 0 - x axis , 350 - y axis ; //(0, positive value ) - Scroll Down 
+		
+					// Scroll Up
 		js.executeScript("window.scrollBy(0,-350)", ""); //(0, negative value ) - Scroll Up ; 
-				
 		
-		// To Scroll the Page - Scroll To by JavaScript
+					// Multiple Scrolls 
+		js.executeScript("window.scrollBy(0,350)", "");
+		js.executeScript("window.scrollBy(0,150)", ""); // Finally the control reaches (0,450)
 		
-		//Write sample code
+		
+		// Another method to Scroll the Page - ScrollTo()  by JavaScript		
+		js.executeScript("window.scrollTo(0,350)", "");  
+		js.executeScript("window.scrollTo(0,150)", ""); // Finally the control reaches (0,150)
 	}
 
 }
