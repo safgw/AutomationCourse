@@ -25,9 +25,7 @@ public class HandlingActions extends Base{
 		catch(AWTException e)
 		{
 			System.out.println("Error in keyboard actions");
-		}
-		
-		
+		}		
 		
 	}
 	
