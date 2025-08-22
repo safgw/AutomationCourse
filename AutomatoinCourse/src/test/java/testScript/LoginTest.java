@@ -6,36 +6,30 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
-
 import automationCore.TestNGBase;
-import net.bytebuddy.asm.Advice.Argument;
+import pages.LoginPage;
+
 
 public class LoginTest extends TestNGBase
 {
 
 	@Test
-	public void verifyUserLoginWithValidCredential() throws AWTException
+	public void verifyUserLoginWithValidCredential()
 	{		
-		WebElement userNameField = driver.findElement(By.id("user-name"));
-		userNameField.sendKeys("standard_user");
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterUserNameOnUserNameField();
+		loginPage.enterPasswordOnPasswordField();
+		loginPage.clickOnLoginButton();
 		
-		WebElement passwordField = driver.findElement(By.id("password"));
-		passwordField.sendKeys("secret_sauce");
-				
-		WebElement loginButton = driver.findElement(By.id("login-button"));
-		loginButton.click();
-
-
-			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_TAB);   // move focus
-			robot.keyRelease(KeyEvent.VK_TAB);
-			robot.keyPress(KeyEvent.VK_ENTER); // press Enter
-			robot.keyRelease(KeyEvent.VK_ENTER);
+		//WebElement userNameField = driver.findElement(By.id("user-name"));
+		//userNameField.sendKeys("standard_user");
 		
+		//WebElement passwordField = driver.findElement(By.id("password"));
+		//passwordField.sendKeys("secret_sauce");
 				
+		//WebElement loginButton = driver.findElement(By.id("login-button"));
+		//loginButton.click();
+			
 	}
 	
 	
